@@ -79,17 +79,7 @@ function headerHTML() {
     return `<a href="${item.href}"${active ? ' class="is-active" aria-current="page"' : ""}>${item.label}</a>`;
   }).join("");
 
-  return `
-    <div class="announce">
-      <div class="announce-track">
-        <span>Бесплатная доставка от ${money(FREE_SHIPPING)}</span><span>✦</span>
-        <span>Только оригинальные пары</span><span>✦</span>
-        <span>Возврат 30 дней</span><span>✦</span>
-        <span>Бесплатная доставка от ${money(FREE_SHIPPING)}</span><span>✦</span>
-        <span>Только оригинальные пары</span><span>✦</span>
-        <span>Возврат 30 дней</span><span>✦</span>
-      </div>
-    </div>
+   return `
     <header class="site-header" id="site-header-el">
       <div class="container header-inner">
         <button class="icon-btn menu-toggle" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">${ICONS.menu}</button>
