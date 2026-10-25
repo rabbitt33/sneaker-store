@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — DISTRICT SHOP</title>
+  <meta name="description" content="Каталог уличных кроссовок DISTRICT SHOP: Jordan, Nike, adidas, New Balance, Puma, Asics, Converse, Vans. Фильтры по бренду, размеру и цене.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="catalog">
+  <div id="site-header"></div>
+
+  <main class="page">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a><span class="sep">/</span><span>Каталог</span>
+      </nav>
+
+      <header class="page-head">
+        <div>
+          <h1>КАТАЛОГ</h1>
+          <p id="catalog-sub">Все модели · оригинал</p>
+        </div>
+        <div class="page-head-art" id="catalog-art" aria-hidden="true"></div>
+      </header>
+
+      <div class="catalog-layout">
+        <div class="filters-backdrop" id="filters-backdrop"></div>
+        <aside class="filters" id="filters" aria-label="Фильтры">
+          <div class="filters-head">
+            <h2>Фильтры</h2>
+            <button class="icon-btn filters-close" id="filters-close" aria-label="Закрыть фильтры">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+            </button>
+          </div>
+
+          <div class="filter-group">
+            <h3>Бренд</h3>
+            <div class="check-list" id="brand-filters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Категория</h3>
+            <div class="check-list" id="category-filters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Кому</h3>
+            <div class="check-list" id="gender-filters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Размер (EU)</h3>
+            <div class="size-grid size-grid--filters" id="size-filters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Цена <output id="price-out">до 10 000 ₴</output></h3>
+            <input class="range" type="range" id="price-filter" min="3000" max="10000" step="500" value="10000" aria-label="Максимальная цена">
+          </div>
+
+          <div class="filter-group">
+            <label class="switch">
+              <input type="checkbox" id="sale-filter">
+              <span class="switch-track"></span>
+              Только со скидкой
+            </label>
+          </div>
+
+          <button class="btn btn--dark btn--wide" id="reset-filters">Сбросить фильтры</button>
+        </aside>
+
+        <section class="catalog-main" aria-label="Результаты">
+          <div class="catalog-toolbar">
+            <button class="btn btn--ghost filters-toggle" id="filters-open">Фильтры</button>
+            <span class="catalog-count" id="catalog-count">Загрузка каталога…</span>
+            <label class="sort">
+              <span>Сортировка</span>
+              <select id="sort-select" aria-label="Сортировка">
+                <option value="popular">Популярные</option>
+                <option value="new">Сначала новинки</option>
+                <option value="price-asc">Цена: по возрастанию</option>
+                <option value="price-desc">Цена: по убыванию</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="chips" id="active-chips"></div>
+          <div class="product-grid" id="catalog-grid"></div>
+
+          <div class="empty-state" id="catalog-empty" hidden>
+            <div class="drawer-empty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+            </div>
+            <h3>Ничего не нашлось</h3>
+            <p>Попробуй убрать часть фильтров или поискать другую модель.</p>
+            <button class="btn btn--dark" id="empty-reset">Сбросить фильтры</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
